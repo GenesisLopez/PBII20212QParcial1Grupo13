@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.parcial1;
 
-public class Estudiante extends Persona {
+public class Estudiante extends Usuario {
 
 	private String escuela;
 

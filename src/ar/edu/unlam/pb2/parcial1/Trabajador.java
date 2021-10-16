@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.parcial1;
 
-public class Trabajador extends Persona {
+public class Trabajador extends Usuario {
 
 	private String empresa;
 

@@ -22,6 +22,17 @@ public class EstacionTest {
 	public void verificarSeSeCreoLaEstacio() {
 		assertNotNull(estaEstacion);
 	}
+	@Test
+	public void controlarSiSEPuedoCargarCreditoaLaSube() {
+		Integer codigoDeTarjeta= 123;
+		Double saldo= 0.0;
+		Sube estaSube= new Sube(codigoDeTarjeta, saldo);
+		saldo=205.0;
+		estaEstacion.cargarSube(estaSube.cargarSaldo(saldo));
+		Double esperado=205.0;
+		Double optenidoDouble;
+		
+	} 
 	
 
 }

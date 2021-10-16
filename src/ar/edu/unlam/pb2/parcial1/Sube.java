@@ -5,12 +5,16 @@ public class Sube {
 	private Integer codigo;
 	private Double saldo;
 	private Double topeSaldo;
-
-	public Sube(Integer codigo, Double saldo) { 
+	private Double saldoDeGracia;
+	private Usuario titular;
+		
+	public Sube(Integer codigo, Double saldo, Usuario titular) { 
 		super();
 		this.codigo = codigo;
 		this.saldo = saldo;
-		this.topeSaldo = 500.00;
+		this.topeSaldo = 1500.00;
+		this.saldoDeGracia=200.0;
+		this.titular= titular;
 	}
 
 	public Integer getCodigo() {
@@ -36,5 +40,13 @@ public class Sube {
 	public void setTopeSaldo(Double topeSaldo) {
 		this.topeSaldo = topeSaldo;
 	}
+
+	public Double cargarSaldo(Double saldo2) {
+		this.saldo+=saldo2;
+		return this.saldo;
+	}
+	
+	
+	
 
 }
