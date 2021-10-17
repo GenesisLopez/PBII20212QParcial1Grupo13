@@ -45,6 +45,12 @@ public class Sube {
 		this.saldo+=saldo2;
 		return this.saldo;
 	}
+
+	public void pagarBoleto(Double double1) {
+		this.saldo-=double1;
+		
+	}
+	
 	
 	
 	

@@ -58,6 +58,20 @@ public class EstacionTest {
 		
 	}
 	
+	@Test
+	public void cobrarPasaje() {
+		Integer codigoDeTarjeta= 123;
+		Double saldo= 0.0;
+		Sube estaSube= new Sube(codigoDeTarjeta, saldo);
+		saldo=500.0;
+		estaEstacion.cargarSube(estaSube, saldo);
+		estaEstacion.cobrarViaje(estaSube);
+		Double esperado=476.0;;
+		Double optenido= estaSube.getSaldo();
+		assertEquals(esperado, optenido);
+	}
+	
+	
 	
 	
 	

@@ -16,7 +16,7 @@ public class Jubilado extends Usuario{
 
 	@Override
 	public Boolean pagarViaje() {
-		
+		this.getSube().pagarBoleto();
 		return null;
 	}
 	
