@@ -47,6 +47,7 @@ public class Sube {
 	}
 
 	public void pagarBoleto(Double double1) {
+		Double estaOperacio= (this.saldo+this.saldoDeGracia);
 		this.saldo-=double1;
 		
 	}
