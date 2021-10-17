@@ -6,9 +6,9 @@ public class LineaFerroviaria {
 
 	public LineaFerroviaria() {
 		Integer CantidadadDeUsuario = 1000;
-		this.tarifa=24.0;
+		this.tarifa = 24.0;
 		this.listaDeUsuarios = new Sube[CantidadadDeUsuario];
-		
+
 	}
 
 	public Double getTarifa() {
@@ -25,13 +25,15 @@ public class LineaFerroviaria {
 
 	public Boolean agregarUsuarios(Sube sube) {
 		Boolean seAgrego = false;
-		for (Integer i = 0; i < listaDeUsuarios.length; i++) {
-			if (listaDeUsuarios[i] == null) {
-				listaDeUsuarios[i] = sube;
-				seAgrego = true;
-				return seAgrego;
-			}
+		if (!this.buscarSube(sube)) {
+			for (Integer i = 0; i < listaDeUsuarios.length; i++) {
+				if (listaDeUsuarios[i] == null) {
+					listaDeUsuarios[i] = sube;
+					seAgrego = true;
+					return seAgrego;
+				}
 
+			}
 		}
 		return seAgrego;
 	}
