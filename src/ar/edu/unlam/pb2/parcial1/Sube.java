@@ -8,7 +8,7 @@ public class Sube {
 	private Double saldoDeGracia;
 	private Usuario titular;
 		
-	public Sube(Integer codigo, Double saldo, Usuario titular) { 
+	public Sube(Integer codigo, Double saldo) { 
 		super();
 		this.codigo = codigo;
 		this.saldo = saldo;

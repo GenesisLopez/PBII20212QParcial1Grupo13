@@ -7,10 +7,19 @@ public class Estacion extends LineaFerroviaria{
 	private NombreEstacion nombre;
 	private Date esteDia;
 
-	public Estacion(NombreEstacion nombre, Date esteDia) {
+	public Estacion(NombreEstacion nombre) {
 		this.nombre=nombre;
-		this.esteDia=esteDia;
+		
 	}
+
+	public void cargarSube(Sube estaSube, Double cargarSaldo) {
+		
+	estaSube.cargarSaldo(cargarSaldo);
+	
+	}
+
+
+
 
 	
 
