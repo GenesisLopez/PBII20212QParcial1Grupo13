@@ -17,23 +17,11 @@ public class Trabajador extends Usuario {
 		this.empresa = empresa;
 	}
 	
-	@Override
-	public Boolean pagarViaje() {
-		
-		return null;
-	}
 
-/*
 	@Override
-	public Boolean pagarViaje() {
-	Boolean sePago = false;
-	
-	if ( this.getSube() != null) {
-		sePago = this.getSube().pagarBoleto(null);
-	}
+	public void pagarViaje() {
 		
-		return sePago;
+
 	}
-*/
 	
 }

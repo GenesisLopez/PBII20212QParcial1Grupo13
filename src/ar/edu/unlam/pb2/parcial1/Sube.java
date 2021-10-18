@@ -58,10 +58,7 @@ public class Sube {
 		return this.saldo;
 	}
 
-	
-	
-	
-	
+
 	public void pagarBoleto(Double double1) {
 		Double estaOperacion= this.getSaldo();
 		if (estaOperacion >= (saldoDeGracia+double1)) {
@@ -71,11 +68,6 @@ public class Sube {
 	
 	}
 	
-	
-	
-	
-	
-	
-	
+
 
 }

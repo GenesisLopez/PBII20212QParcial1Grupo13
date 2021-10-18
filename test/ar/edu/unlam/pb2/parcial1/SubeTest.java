@@ -34,7 +34,7 @@ public class SubeTest {
 		Double tarifa= this.estaEstacion.getTarifa();
 		estaSube.pagarBoleto(tarifa);
 		 optenido= estaSube.getSaldo();
-		assertEquals(esperado, optenido);
+		assertEquals(esperado, optenido,0.1);
 		
 	}
 	@Test
@@ -50,7 +50,7 @@ public class SubeTest {
 
 		
 		 optenido= estaSube.getSaldo();
-		assertEquals(esperado, optenido);
+		assertEquals(esperado, optenido,0.1);
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ public class SubeTest {
 
 		
 		 optenido= estaSube.getSaldo();
-		assertEquals(esperado, optenido);
+		assertEquals(esperado, optenido,0.1);
 	}
 
 	
@@ -104,7 +104,7 @@ public class SubeTest {
 		
 		estaSube.cargarSaldo(carga);
 		 optenido= estaSube.getSaldo();
-		assertEquals(esperado, optenido);
+		assertEquals(esperado, optenido,0.1);
 	}
 	
 	@Test
@@ -120,7 +120,7 @@ public class SubeTest {
 
 		
 		 optenido= estaSube.getSaldo();
-		assertEquals(esperado, optenido);
+		assertEquals(esperado, optenido,0.1);
 	}
 	
 	

@@ -2,7 +2,8 @@ package ar.edu.unlam.pb2.parcial1;
 
 public class LineaFerroviaria {
 	private Sube[] listaDeUsuarios;
-	private Double tarifa;
+	public static Double tarifa;
+	public static Double tarifaDos = 24.0;
 
 	public LineaFerroviaria() {
 		Integer CantidadadDeUsuario = 1000;

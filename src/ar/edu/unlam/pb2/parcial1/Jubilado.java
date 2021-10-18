@@ -10,9 +10,11 @@ public class Jubilado extends Usuario{
 
 
 	@Override
-	public Boolean pagarViaje() {
-	//	this.getSube().pagarBoleto(null);
-		return false;
+	public void pagarViaje() {
+		Double descuentoJubilado= Estacion.tarifa*(0.8);
+		
+		this.getSube().pagarBoleto(descuentoJubilado);
+
 	}
 	
 	

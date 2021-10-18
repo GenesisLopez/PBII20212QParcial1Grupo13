@@ -20,9 +20,12 @@ public class Estudiante extends Usuario {
 
 
 	@Override
-	public Boolean pagarViaje() {
+	public void pagarViaje() {
 		
-		return null;
+		Double descuentoEstudiante= Estacion.tarifa*(0.5);
+		
+		this.getSube().pagarBoleto(descuentoEstudiante);
+		
 	}
 
 }
