@@ -41,15 +41,92 @@ public class SubeTest {
 	public void poderPagarElViajeConSinTenerSaldoEnLaTarjeta() {
 		Double carga=50.0;
 		estaSube.cargarSaldo(carga);
-		Double esperado=26.0;
+		Double esperado=-22.0;
 		Double optenido= estaSube.getSaldo();
 		Double tarifa= this.estaEstacion.getTarifa();
 		estaSube.pagarBoleto(tarifa);
 		estaSube.pagarBoleto(tarifa);
 		estaSube.pagarBoleto(tarifa);
+
+		
+		 optenido= estaSube.getSaldo();
+		assertEquals(esperado, optenido);
+	}
+	
+	@Test
+	public void noTePermitaPagarElViajeSiTenesMenosSaldoQueElSaldoDeGracia() {
+		Double carga=50.0;
+		estaSube.cargarSaldo(carga);
+		Double esperado=-190.0;
+		Double optenido= estaSube.getSaldo();
+		Double tarifa= this.estaEstacion.getTarifa();
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+		estaSube.pagarBoleto(tarifa);
+
 		
 		 optenido= estaSube.getSaldo();
 		assertEquals(esperado, optenido);
 	}
 
+	
+	@Test
+	public void queNoTeDejeCargarCreditoSuperandoElTope() {
+		Double carga=1400.0;
+		estaSube.cargarSaldo(carga);
+		Double esperado=1400.0;
+		Double optenido= estaSube.getSaldo();
+		
+		estaSube.cargarSaldo(carga);
+		 optenido= estaSube.getSaldo();
+		assertEquals(esperado, optenido);
+	}
+	
+	@Test
+	public void queNoTeDejeCargarCreditoNegativo() {
+		Double carga=40.0;
+		estaSube.cargarSaldo(carga);
+	 carga=-10.0;
+		Double esperado=40.0;
+		Double optenido= estaSube.getSaldo();
+		
+		estaSube.cargarSaldo(carga);
+
+
+		
+		 optenido= estaSube.getSaldo();
+		assertEquals(esperado, optenido);
+	}
+	
+	
+	
 }
+
+
+
+

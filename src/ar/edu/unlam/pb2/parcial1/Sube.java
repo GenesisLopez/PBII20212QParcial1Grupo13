@@ -7,14 +7,16 @@ public class Sube {
 	private Double topeSaldo;
 	private Double saldoDeGracia;
 	private Usuario titular;
+	
 		
 	public Sube(Integer codigo, Double saldo) { 
 		super();
 		this.codigo = codigo;
 		this.saldo = saldo;
 		this.topeSaldo = 1500.00;
-		this.saldoDeGracia=200.0;
+		this.saldoDeGracia=-200.0;
 		this.titular= titular;
+	
 	}
 
 	public Integer getCodigo() {
@@ -42,15 +44,35 @@ public class Sube {
 	}
 
 	public Double cargarSaldo(Double saldo2) {
+		
+		Double estaOperacion= this.getSaldo();
+		if(saldo2>0) {
+			
+		
+		if (estaOperacion <= (topeSaldo-saldo2)) {
+		
+		
 		this.saldo+=saldo2;
+		}
+		}
 		return this.saldo;
 	}
 
+	
+	
+	
+	
 	public void pagarBoleto(Double double1) {
-		Double estaOperacio= (this.saldo+this.saldoDeGracia);
-		this.saldo-=double1;
-		
+		Double estaOperacion= this.getSaldo();
+		if (estaOperacion >= (saldoDeGracia+double1)) {
+			saldo-=double1;
+			
+		}
+	
 	}
+	
+	
+	
 	
 	
 	

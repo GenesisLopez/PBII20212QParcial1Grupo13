@@ -17,11 +17,7 @@ public class Estudiante extends Usuario {
 		this.escuela = escuela;
 	}
 
-	@Override
-	public Double cargarSaldo() {
-		
-		return null;
-	}
+
 
 	@Override
 	public Boolean pagarViaje() {

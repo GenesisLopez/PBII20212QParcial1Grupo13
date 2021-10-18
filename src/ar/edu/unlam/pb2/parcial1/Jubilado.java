@@ -8,11 +8,6 @@ public class Jubilado extends Usuario{
 		
 	}
 
-	@Override
-	public Double cargarSaldo() {
-		
-		return null;
-	}
 
 	@Override
 	public Boolean pagarViaje() {

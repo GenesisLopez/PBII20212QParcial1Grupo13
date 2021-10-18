@@ -84,6 +84,8 @@ public class EstacionTest {
 		Double optenido = estaSube.getSaldo();
 		assertEquals(esperado, optenido);
 	}
+	
+
 //	@Test
 //	public void luegoDePagarUnViajeSeRegistreLaTarjetaEnLaEstacion() {
 //		Integer codigoDeTarjeta = 123;

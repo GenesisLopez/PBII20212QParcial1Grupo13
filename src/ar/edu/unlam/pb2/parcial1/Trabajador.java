@@ -16,17 +16,24 @@ public class Trabajador extends Usuario {
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
-
-	@Override
-	public Double cargarSaldo() {
-		
-		return null;
-	}
-
+	
 	@Override
 	public Boolean pagarViaje() {
 		
 		return null;
 	}
 
+/*
+	@Override
+	public Boolean pagarViaje() {
+	Boolean sePago = false;
+	
+	if ( this.getSube() != null) {
+		sePago = this.getSube().pagarBoleto(null);
+	}
+		
+		return sePago;
+	}
+*/
+	
 }
