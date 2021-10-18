@@ -86,16 +86,18 @@ public class EstacionTest {
 	}
 	
 
-//	@Test
-//	public void luegoDePagarUnViajeSeRegistreLaTarjetaEnLaEstacion() {
-//		Integer codigoDeTarjeta = 123;
-//		Double saldo = 0.0;
-//		saldo = 500.0;
-//		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
-//		Double tarifa=estaEstacion.getTarifa();
-//		estaEstacion.cobrarViaje(estaSube);
-//		assertTrue(estaEstacion.buscarSube(estaSube));
-//	}
+	@Test
+	public void luegoDePagarUnViajeSeRegistreLaTarjetaEnLaEstacion() {
+		Integer codigoDeTarjeta = 123;
+		Double saldo = 0.0;
+		saldo = 500.0;
+		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		
+		Double tarifa=estaEstacion.getTarifa();
+		estaEstacion.cobrarViaje(estaSube);
+		
+		assertTrue(estaEstacion.buscarSube(estaSube));
+	}
 
 }
 

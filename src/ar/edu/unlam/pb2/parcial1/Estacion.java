@@ -25,7 +25,7 @@ public class Estacion extends LineaFerroviaria{
 
 	public void cobrarViaje(Sube estaSube) {
 		estaSube.pagarBoleto(getTarifa());
-		
+		this.agregarUsuarios(estaSube);
 	}
 	
 
