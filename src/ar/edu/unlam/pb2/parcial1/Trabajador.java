@@ -21,6 +21,9 @@ public class Trabajador extends Usuario {
 	@Override
 	public void pagarViaje() {
 		
+		
+		this.getSube().pagarBoleto(LineaFerroviaria.tarifa);
+		
 
 	}
 	

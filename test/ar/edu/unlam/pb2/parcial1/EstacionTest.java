@@ -26,9 +26,9 @@ public class EstacionTest {
 
 	@Test
 	public void verificarSiSeAgregaUsuario() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube( saldo);
 		Boolean esperado = true;
 
 		assertTrue(estaEstacion.agregarUsuarios(estaSube));
@@ -37,11 +37,11 @@ public class EstacionTest {
 
 	@Test
 	public void buscarUnUsuarioAgregado() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
-		codigoDeTarjeta = 2121;
-		Sube segundaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube(saldo);
+		
+		Sube segundaSube = new Sube(saldo);
 		estaEstacion.agregarUsuarios(estaSube);
 		assertTrue(estaEstacion.buscarSube(estaSube));
 
@@ -49,9 +49,9 @@ public class EstacionTest {
 
 	@Test
 	public void verificarSiSeCargaBienElSaldo() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube(saldo);
 		saldo = 500.0;
 		estaEstacion.cargarSube(estaSube, saldo);
 		Double esperado = 500.0;
@@ -62,9 +62,9 @@ public class EstacionTest {
 
 	@Test
 	public void cobrarPasaje() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube(saldo);
 		saldo = 500.0;
 		estaEstacion.cargarSube(estaSube, saldo);
 		estaEstacion.cobrarViaje(estaSube);
@@ -75,9 +75,9 @@ public class EstacionTest {
 
 	@Test
 	public void cargarSaldoConUnaTarjetaSinRegistrarEnLaEstacion() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube(saldo);
 		saldo = 500.0;
 		estaEstacion.cargarSube(estaSube, saldo);
 		Double esperado = 500.0;
@@ -88,15 +88,51 @@ public class EstacionTest {
 
 	@Test
 	public void luegoDePagarUnViajeSeRegistreLaTarjetaEnLaEstacion() {
-		Integer codigoDeTarjeta = 123;
+		
 		Double saldo = 0.0;
 		saldo = 500.0;
-		Sube estaSube = new Sube(codigoDeTarjeta, saldo);
+		Sube estaSube = new Sube(saldo);
 		
 		Double tarifa=estaEstacion.getTarifa();
 		estaEstacion.cobrarViaje(estaSube);
 		
 		assertTrue(estaEstacion.buscarSube(estaSube));
+	}
+	@Test
+	public void saberCuantosUsuariosEstuvieronEnLaEstacion() {
+		
+		
+		Sube estaSube1 = new Sube(400.0);
+		Sube estaSube2 = new Sube(300.0);
+		Sube estaSube3 = new Sube(700.0);
+		Sube estaSube4 = new Sube(400.0);
+		estaEstacion.agregarUsuarios(estaSube1);
+		estaEstacion.agregarUsuarios(estaSube2);
+		estaEstacion.agregarUsuarios(estaSube3);
+		estaEstacion.agregarUsuarios(estaSube4);
+		Integer esperado = 4;
+		Integer obtenido = estaEstacion.tamañoDelistaDeUsuarios();
+		
+		assertEquals(esperado,obtenido);
+		
+		
+	}
+	@Test 
+	public void siDosSubesSonIgualesQueUnaNoSeAgregue() {
+		
+		Sube estaSube1 = new Sube(123,400.0);
+		Sube estaSube2 = new Sube(123,300.0);
+		Sube estaSube3 = new Sube(124,700.0);
+		Sube estaSube4 = new Sube(152,400.0);
+		estaEstacion.agregarUsuarios(estaSube1);
+		estaEstacion.agregarUsuarios(estaSube2);
+		estaEstacion.agregarUsuarios(estaSube3);
+		estaEstacion.agregarUsuarios(estaSube4);
+		Integer esperado = 3;
+		Integer obtenido = estaEstacion.tamañoDelistaDeUsuarios();
+		
+		assertEquals(esperado,obtenido);
+		
 	}
 
 }

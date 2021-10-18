@@ -13,9 +13,9 @@ public class UsuarioTest {
 	public void queAlPagarSiendoEstudianteSeApliqueElDescuento() {
 		Sube estaSube;
 		Estacion estaEstacion;
-			Integer codigo=1111;
+			
 			Double saldo=50.0;
-			estaSube= new Sube(codigo ,saldo);
+			estaSube= new Sube(saldo);
 			NombreEstacion nombre = NombreEstacion.CASTELAR;
 			Date esteDia = new Date();
 			 estaEstacion = new Estacion(nombre, esteDia);
@@ -34,9 +34,9 @@ public class UsuarioTest {
 	public void queAlPagarSiendoEstudianteNoBajeDelSaldoDeGracia() {
 		Sube estaSube;
 		Estacion estaEstacion;
-			Integer codigo=1111;
+			
 			Double saldo=50.0;
-			estaSube= new Sube(codigo ,saldo);
+			estaSube= new Sube(saldo);
 			NombreEstacion nombre = NombreEstacion.CASTELAR;
 			Date esteDia = new Date();
 			 estaEstacion = new Estacion(nombre, esteDia);
@@ -91,9 +91,9 @@ public class UsuarioTest {
 	public void queAlPagarSiendoJubiladoSeApliqueElDescuento() {
 		Sube estaSube;
 		Estacion estaEstacion;
-			Integer codigo=1111;
+			
 			Double saldo=50.0;
-			estaSube= new Sube(codigo ,saldo);
+			estaSube= new Sube(saldo);
 			NombreEstacion nombre = NombreEstacion.CASTELAR;
 			Date esteDia = new Date();
 			 estaEstacion = new Estacion(nombre, esteDia);
@@ -113,9 +113,9 @@ public class UsuarioTest {
 	public void queAlPagarSiendoJubiladoNoBajeDelSaldoDeGracia() {
 		Sube estaSube;
 		Estacion estaEstacion;
-			Integer codigo=1111;
+			
 			Double saldo=50.0;
-			estaSube= new Sube(codigo ,saldo);
+			estaSube= new Sube(saldo);
 			NombreEstacion nombre = NombreEstacion.CASTELAR;
 			Date esteDia = new Date();
 			 estaEstacion = new Estacion(nombre, esteDia);

@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.parcial1;
 
-public abstract class Usuario implements DescuentoPersona{
+public abstract class Usuario implements DescuentoUsuario{
 
 	private Integer dni;
 	private String nombre;

@@ -9,6 +9,16 @@ public class Sube {
 	private Usuario titular;
 	
 		
+	public Sube(Double saldo) { 
+		super();
+		this.codigo = (int)(Math.random()*30000000+1);
+		this.saldo = saldo;
+		this.topeSaldo = 1500.00;
+		this.saldoDeGracia=-200.0;
+		this.titular= titular;
+		
+	
+	}
 	public Sube(Integer codigo, Double saldo) { 
 		super();
 		this.codigo = codigo;
@@ -16,6 +26,7 @@ public class Sube {
 		this.topeSaldo = 1500.00;
 		this.saldoDeGracia=-200.0;
 		this.titular= titular;
+		
 	
 	}
 

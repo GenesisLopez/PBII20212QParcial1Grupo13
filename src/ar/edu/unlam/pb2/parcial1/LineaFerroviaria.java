@@ -1,15 +1,23 @@
 package ar.edu.unlam.pb2.parcial1;
 
+import java.util.ArrayList;
+
 public class LineaFerroviaria {
-	private Sube[] listaDeUsuarios;
+	
+	private ArrayList<Sube> listaDeUsuarios;
 	public static Double tarifa;
 	public static Double tarifaDos = 24.0;
 
 	public LineaFerroviaria() {
-		Integer CantidadadDeUsuario = 1000;
-		this.tarifa = 24.0;
-		this.listaDeUsuarios = new Sube[CantidadadDeUsuario];
 
+		this.tarifa = 24.0;
+		this.listaDeUsuarios = new ArrayList<Sube>();
+
+	}
+	public Integer tamañoDelistaDeUsuarios() {
+		
+		return this.listaDeUsuarios.size();
+		
 	}
 
 	public Double getTarifa() {
@@ -20,39 +28,37 @@ public class LineaFerroviaria {
 		this.tarifa = tarifa;
 	}
 
-	public void setListaDeUsuarios(Sube[] listaDeUsuarios) {
+	public void setListaDeUsuarios(ArrayList<Sube> listaDeUsuarios) {
 		this.listaDeUsuarios = listaDeUsuarios;
 	}
 
 	public Boolean agregarUsuarios(Sube sube) {
 		Boolean seAgrego = false;
 		if (!this.buscarSube(sube)) {
-			for (Integer i = 0; i < listaDeUsuarios.length; i++) {
-				if (listaDeUsuarios[i] == null) {
-					listaDeUsuarios[i] = sube;
-					seAgrego = true;
-					return seAgrego;
-				}
 
-			}
+			listaDeUsuarios.add(sube);
+			seAgrego = true;
+			return seAgrego;
+
 		}
+
 		return seAgrego;
 	}
 
-	public Sube[] getListaDeUsuarios() {
+	public ArrayList<Sube> getListaDeUsuarios() {
 		return listaDeUsuarios;
 	}
 
 	public Boolean buscarSube(Sube sube) {
 		Boolean subeBuscada = false;
-		for (Integer i = 0; i < listaDeUsuarios.length; i++) {
-			if (this.listaDeUsuarios[i] != null) {
-				if (listaDeUsuarios[i].getCodigo().equals(sube.getCodigo())) {
-					subeBuscada = true;
-					return subeBuscada;
-				}
+		for (Integer i = 0; i < listaDeUsuarios.size(); i++) {
+
+			if (listaDeUsuarios.get(i).getCodigo().equals(sube.getCodigo())) {
+				subeBuscada = true;
+				return subeBuscada;
 			}
 		}
+
 		return subeBuscada;
 
 	}

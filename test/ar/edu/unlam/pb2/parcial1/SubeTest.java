@@ -12,9 +12,9 @@ public class SubeTest {
 	Estacion estaEstacion;
 	@Before
 	public void test() {
-		Integer codigo=1111;
+		
 		Double saldo=0.0;
-		this.estaSube= new Sube(codigo ,saldo);
+		this.estaSube= new Sube(saldo);
 		NombreEstacion nombre = NombreEstacion.CASTELAR;
 		Date esteDia = new Date();
 		 estaEstacion = new Estacion(nombre, esteDia);
@@ -111,7 +111,7 @@ public class SubeTest {
 	public void queNoTeDejeCargarCreditoNegativo() {
 		Double carga=40.0;
 		estaSube.cargarSaldo(carga);
-	 carga=-10.0;
+		carga=-10.0;
 		Double esperado=40.0;
 		Double optenido= estaSube.getSaldo();
 		
